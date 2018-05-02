@@ -15,6 +15,7 @@ import Login from './Login.jsx';
 import AboutUs from './AboutUs.jsx';
 import Products from './Products.jsx';
 import Contact from './Contact.jsx';
+import BestDeals from './BestDeals.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ dataa:"",
 showAboutUsComponent:false,
 showProductsComponent:false,
 showContactComponent:false,
+showBestComponent:false,
 showMainComponent:true
 };
 
@@ -52,7 +54,8 @@ showNav(e){
     showAboutUsComponent:false,
     showProductsComponent:false,
     showContactComponent:false,
-    showMainComponent:false
+    showMainComponent:false,
+    showBestComponent:false
   })
   this.setState({
     [e.target.name]: true
@@ -78,6 +81,8 @@ render() {
     <li><a href="#" name="showProductsComponent" onClick={this.showNav}>Products</a></li>
 
     <li><a href="#" name="showContactComponent" onClick={this.showNav}>Contact</a></li>
+
+    <li><a href="#" name="showBestComponent" onClick={this.showNav}>Best Deals</a></li>
       
     </ul>
     <form className="form-inline ">
@@ -106,6 +111,7 @@ render() {
   {this.state.showContactComponent ? <Contact/>:null}
   {this.state.showAboutUsComponent ? <AboutUs/>:null }
   {this.state.showProductsComponent? <Products/>: null}
+  {this.state.showBestComponent? <BestDeals/>: null}
 
 
   </div>
